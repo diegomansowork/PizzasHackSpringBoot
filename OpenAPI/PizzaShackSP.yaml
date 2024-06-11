@@ -4,13 +4,13 @@ info:
   description: |
     This is a RESTFul API for Pizza Shack online pizza delivery store.
   contact:
-    name: John Doe
+    name: Diego Manso
     url: 'http://www.pizzashack.com'
-    email: architecture@pizzashack.com
+    email: manso@wso2.com
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  version: 1.0.0
+  version: 2.0.0
 servers:
   - url: /
 security:
@@ -19,20 +19,16 @@ paths:
   /order:
     post:
       description: Create a new Order
+      tags:
+        - order
       requestBody:
         $ref: '#/components/requestBodies/Order'
       responses:
         '201':
           description: >-
             Created. Successful response with the newly created object as entity
-            inthe body.Location header contains URL of newly created entity.
+            inthe body.
           headers:
-            Location:
-              description: The URL of the newly created resource.
-              style: simple
-              explode: false
-              schema:
-                type: string
             Content-Type:
               description: The content type of the body.
               style: simple
@@ -62,6 +58,8 @@ paths:
   /menu:
     get:
       description: Return a list of available menu items
+      tags:
+        - menu
       responses:
         '200':
           description: OK. List of APIs is returned.
@@ -82,6 +80,8 @@ paths:
   '/order/{orderId}':
     get:
       description: Get details of an Order
+      tags:
+        - order
       parameters:
         - name: orderId
           in: path
@@ -115,6 +115,8 @@ paths:
         - default: []
     put:
       description: Update an existing Order
+      tags:
+        - order
       parameters:
         - name: orderId
           in: path
@@ -131,12 +133,6 @@ paths:
         '200':
           description: OK. Successful response with updated Order
           headers:
-            Location:
-              description: The URL of the newly created resource.
-              style: simple
-              explode: false
-              schema:
-                type: string
             Content-Type:
               description: The content type of the body.
               style: simple
@@ -163,6 +159,8 @@ paths:
         - default: []
     delete:
       description: Delete an existing Order
+      tags:
+        - order
       parameters:
         - name: orderId
           in: path
@@ -178,6 +176,58 @@ paths:
           description: OK. Resource successfully deleted.
         '404':
           description: Not Found. Resource to be deleted does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      security:
+        - default: []
+  /delivery:
+    get:
+      description: 'Get All Orders'
+      tags:
+        - delivery
+      parameters: []
+      responses:
+        '200':
+          description: OK
+  '/delivery/{orderId}':
+    put:
+      description: Deliver an existing Order
+      tags:
+        - delivery
+      parameters:
+        - name: orderId
+          in: path
+          description: Order Id
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            format: string
+      responses:
+        '200':
+          description: OK. Successful response with delivered Order
+          headers:
+            Content-Type:
+              description: The content type of the body.
+              style: simple
+              explode: false
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: Bad Request. Invalid request or validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found. The resource to be updated does not exist.
           content:
             application/json:
               schema:
