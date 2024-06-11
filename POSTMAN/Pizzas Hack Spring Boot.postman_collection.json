@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "1bc8e64d-361a-434e-aa6e-6918666c2908",
+		"name": "Pizzas Hack Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2103118"
+	},
+	"item": [
+		{
+			"name": "menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serverURL}}/menu",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverURL}}/menu",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"menu"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2024 08:53:31 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"menuId\": 1,\n        \"name\": \"Chicken Parmesan\",\n        \"description\": \"Grilled chicken, fresh tomatoes, feta and mozzarella cheese\",\n        \"price\": \"25.99\",\n        \"icon\": \"/images/1.png\"\n    },\n    {\n        \"menuId\": 2,\n        \"name\": \"Spicy Italian\",\n        \"description\": \"Pepperoni and a double portion of spicy Italian sausage\",\n        \"price\": \"18.99\",\n        \"icon\": \"/images/2.png\"\n    },\n    {\n        \"menuId\": 3,\n        \"name\": \"Garden Fresh\",\n        \"description\": \"Slices onions and green peppers, gourmet mushrooms, black olives and ripe Roma tomatoes\",\n        \"price\": \"25.99\",\n        \"icon\": \"/images/3.png\"\n    },\n    {\n        \"menuId\": 4,\n        \"name\": \"Tuscan Six Cheese\",\n        \"description\": \"Six cheese blend of mozzarella, Parmesan, Romano, Asiago and Fontina\",\n        \"price\": \"9.99\",\n        \"icon\": \"/images/4.png\"\n    },\n    {\n        \"menuId\": 5,\n        \"name\": \"Spinach Alfredo\",\n        \"description\": \"Rich and creamy blend of spinach and garlic Parmesan with Alfredo sauce\",\n        \"price\": \"17.99\",\n        \"icon\": \"/images/5.png\"\n    },\n    {\n        \"menuId\": 6,\n        \"name\": \"BBQ Chicken Bacon\",\n        \"description\": \"Grilled white chicken, hickory-smoked bacon and fresh sliced onions in barbeque sauce\",\n        \"price\": \"26.99\",\n        \"icon\": \"/images/6.png\"\n    },\n    {\n        \"menuId\": 7,\n        \"name\": \"Hawaiian BBQ Chicken\",\n        \"description\": \"Grilled white chicken, hickory-smoked bacon, barbeque sauce topped with sweet pine-apple\",\n        \"price\": \"10.99\",\n        \"icon\": \"/images/7.png\"\n    },\n    {\n        \"menuId\": 8,\n        \"name\": \"Grilled Chicken Club\",\n        \"description\": \"Grilled white chicken, hickory-smoked bacon and fresh sliced onions topped with Roma tomatoes\",\n        \"price\": \"20.99\",\n        \"icon\": \"/images/8.png\"\n    },\n    {\n        \"menuId\": 9,\n        \"name\": \"Double Bacon 6Cheese\",\n        \"description\": \"Hickory-smoked bacon, Julienne cut Canadian bacon, Parmesan, mozzarella, Romano, Asiago and and Fontina cheese\",\n        \"price\": \"23.99\",\n        \"icon\": \"/images/9.png\"\n    },\n    {\n        \"menuId\": 10,\n        \"name\": \"Chilly Chicken Cordon Bleu\",\n        \"description\": \"Spinash Alfredo sauce topped with grilled chicken, ham, onions and mozzarella\",\n        \"price\": \"10.99\",\n        \"icon\": \"/images/10.png\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "delivery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serverURL}}/delivery",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"delivery"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "menu Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverURL}}/delivery",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"delivery"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2024 10:15:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"orderId\": 1,\n        \"pizzaType\": \"Tipo de pizza\",\n        \"quantity\": 3,\n        \"customerName\": \"Diego\",\n        \"creditCardNumber\": \"33453543534534\",\n        \"address\": \"Calle dels tas\",\n        \"delivered\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "deliver",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{serverURL}}/delivery/:orderId",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"delivery",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "deliver",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{serverURL}}/delivery/:orderId",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"delivery",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2024 10:16:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 1,\n    \"pizzaType\": \"Tipo de pizza\",\n    \"quantity\": 3,\n    \"customerName\": \"Diego\",\n    \"creditCardNumber\": \"33453543534534\",\n    \"address\": \"Calle dels tas\",\n    \"delivered\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "crete order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"pizzaType\":\"Tipo de pizza\",\n\"quantity\": 3,\n\"customerName\": \"Diego\",\n\"creditCardNumber\": \"33453543534534\",\n\"address\": \"Calle dels tas\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serverURL}}/order",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "menu Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"pizzaType\":\"Tipo de pizza\",\n\"quantity\": 3,\n\"customerName\": \"Diego\",\n\"creditCardNumber\": \"33453543534534\",\n\"address\": \"Calle dels tas\"\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverURL}}/order",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "order",
+							"value": "/order/1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2024 08:42:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 1,\n    \"pizzaType\": \"Tipo de pizza\",\n    \"quantity\": 3,\n    \"customerName\": \"Diego\",\n    \"creditCardNumber\": \"33453543534534\",\n    \"address\": \"Calle dels tas\",\n    \"delivered\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "get order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serverURL}}/order/:orderId",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"order",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "order Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"pizzaType\":\"Tipo de pizza\",\n\"quantity\": 3,\n\"customerName\": \"Diego\",\n\"creditCardNumber\": \"33453543534534\",\n\"address\": \"Calle dels tas\"\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverURL}}/order/:orderId",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"order",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2024 08:48:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 1,\n    \"pizzaType\": \"Tipo de pizza\",\n    \"quantity\": 3,\n    \"customerName\": \"Diego\",\n    \"creditCardNumber\": \"33453543534534\",\n    \"address\": \"Calle dels tas\",\n    \"delivered\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "modify order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"pizzaType\":\"Tipo de pizza\",\n\"quantity\": 4,\n\"customerName\": \"Diego\",\n\"creditCardNumber\": \"33453543534534\",\n\"address\": \"Calle dels tas\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serverURL}}/order/:orderId",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"order",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "order Copy 2",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"pizzaType\":\"Tipo de pizza\",\n\"quantity\": 4,\n\"customerName\": \"Diego\",\n\"creditCardNumber\": \"33453543534534\",\n\"address\": \"Calle dels tas\"\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverURL}}/order/:orderId",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"order",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2024 08:53:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"orderId\": 1,\n    \"pizzaType\": \"Tipo de pizza\",\n    \"quantity\": 4,\n    \"customerName\": \"Diego\",\n    \"creditCardNumber\": \"33453543534534\",\n    \"address\": \"Calle dels tas\",\n    \"delivered\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "delete order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{serverURL}}/order/:orderId",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"order",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "modify order Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverURL}}/order/:orderId",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"order",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2024 09:00:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "serverURL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

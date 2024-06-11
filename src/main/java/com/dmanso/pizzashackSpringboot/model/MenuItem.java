@@ -21,7 +21,7 @@ public class MenuItem {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false, nullable = false)
-	private String menuId;
+	private Long menuId;
 
 	@Column
 	private String name;

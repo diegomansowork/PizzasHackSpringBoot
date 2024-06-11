@@ -1,7 +1,6 @@
 package com.dmanso.pizzashackSpringboot.services;
 
-import com.dmanso.pizzashackSpringboot.model.MenuItem;
-import com.dmanso.pizzashackSpringboot.model.Order;
+import com.dmanso.pizzashackSpringboot.model.PizzaOrder;
 import com.dmanso.pizzashackSpringboot.repositories.OrderRepo;
 import org.springframework.stereotype.Service;
 
@@ -19,27 +18,27 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrders() {
+    public List<PizzaOrder> getOrders() {
 
-        List<Order> orders = new ArrayList<>();
+        List<PizzaOrder> orders = new ArrayList<>();
         orderRepository.findAll().forEach(orders::add);
         return orders;
 
     }
 
     @Override
-    public Optional<Order> getOrderById(Long id) {
+    public Optional<PizzaOrder> getOrderById(Long id) {
         return orderRepository.findById(id);
     }
 
     @Override
-    public Order insert(Order order) {
+    public PizzaOrder insert(PizzaOrder order) {
         return orderRepository.save(order);
     }
 
     @Override
-    public void updateOrder(Long id, Order order) {
-        Order orderFromDb = orderRepository.findById(id).get();
+    public void updateOrder(Long id, PizzaOrder order) {
+        PizzaOrder orderFromDb = orderRepository.findById(id).get();
         //System.out.println(itemFromDb.toString());
         orderFromDb.setAddress(order.getAddress());
         //orderFromDb.setDelivered(true);
@@ -57,7 +56,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void deliverOrder(Long id) {
-        Order orderFromDb = orderRepository.findById(id).get();
+        PizzaOrder orderFromDb = orderRepository.findById(id).get();
         orderFromDb.setDelivered(true);
         orderRepository.save(orderFromDb);
     }

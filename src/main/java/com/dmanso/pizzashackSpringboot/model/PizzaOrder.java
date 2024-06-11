@@ -15,12 +15,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Order {
+public class PizzaOrder {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false, nullable = false)
-	private String orderId;
+	private Long orderId;
 	
 	@Column
 	private String pizzaType;

@@ -1,8 +1,7 @@
 package com.dmanso.pizzashackSpringboot.controllers;
 
-import java.util.List;
+
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,10 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dmanso.pizzashackSpringboot.model.Order;
+import com.dmanso.pizzashackSpringboot.model.PizzaOrder;
 import com.dmanso.pizzashackSpringboot.services.OrderService;
 
 @RestController
@@ -32,9 +30,9 @@ public class OrderController {
 
 
     @GetMapping({"/{orderId}"})
-    public ResponseEntity<Order> getOrder(@PathVariable Long orderId) {
+    public ResponseEntity<PizzaOrder> getOrder(@PathVariable Long orderId) {
         try {
-            Optional<Order> optionalOrder = orderService.getOrderById(orderId);
+            Optional<PizzaOrder> optionalOrder = orderService.getOrderById(orderId);
             return optionalOrder.map(order -> new ResponseEntity<>(order, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -42,9 +40,9 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<Order> saveOrder(@RequestBody Order order) {
+    public ResponseEntity<PizzaOrder> saveOrder(@RequestBody PizzaOrder order) {
         if(!order.getAddress().isEmpty() && order.getPizzaType()!= null && !order.getCustomerName().isEmpty()){
-            Order order1 = orderService.insert(order);
+            PizzaOrder order1 = orderService.insert(order);
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.add("order", "/order/" + order.getOrderId());
             return new ResponseEntity<>(order1, httpHeaders, HttpStatus.CREATED);
@@ -55,9 +53,9 @@ public class OrderController {
     }
 
     @PutMapping({"/{orderId}"})
-    public ResponseEntity<Order> updateOrder(@PathVariable("orderId") Long orderId, @RequestBody Order order) {
+    public ResponseEntity<PizzaOrder> updateOrder(@PathVariable("orderId") Long orderId, @RequestBody PizzaOrder order) {
         orderService.updateOrder(orderId, order);
-        Optional<Order> optionalOrder = orderService.getOrderById(orderId);
+        Optional<PizzaOrder> optionalOrder = orderService.getOrderById(orderId);
         if(optionalOrder.isEmpty()){
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
@@ -65,9 +63,9 @@ public class OrderController {
     }
 
     @DeleteMapping({"/{orderId}"})
-    public ResponseEntity<Order> deleteOrder(@PathVariable("orderId") Long orderId) {
-        Optional<Order> optionalOrder = orderService.getOrderById(orderId);
-        if(!optionalOrder.isEmpty()){
+    public ResponseEntity<PizzaOrder> deleteOrder(@PathVariable("orderId") Long orderId) {
+        Optional<PizzaOrder> optionalOrder = orderService.getOrderById(orderId);
+        if(optionalOrder.isEmpty()){
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
         orderService.deleteOrder(orderId);
