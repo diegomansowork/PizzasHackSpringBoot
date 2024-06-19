@@ -13,7 +13,7 @@ import com.dmanso.pizzashackSpringboot.model.MenuItem;
 import com.dmanso.pizzashackSpringboot.services.MenuItemService;
 
 @RestController
-@RequestMapping("/menu")
+@RequestMapping("/pizza-hack-sp/menu")
 public class MenuItemController {
     
     MenuItemService itemsService;

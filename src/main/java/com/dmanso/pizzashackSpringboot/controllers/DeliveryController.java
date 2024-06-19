@@ -17,7 +17,7 @@ import com.dmanso.pizzashackSpringboot.model.PizzaOrder;
 import com.dmanso.pizzashackSpringboot.services.OrderService;
 
 @RestController
-@RequestMapping("/delivery")
+@RequestMapping("/pizza-hack-sp/delivery")
 public class DeliveryController {
     
     OrderService orderService;
