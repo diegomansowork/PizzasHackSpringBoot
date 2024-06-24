@@ -22,7 +22,7 @@ paths:
       tags:
         - order
       requestBody:
-        $ref: '#/components/requestBodies/Order'
+        $ref: '#/components/requestBodies/NewOrder'
       responses:
         '201':
           description: >-
@@ -38,7 +38,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Order'
+                $ref: '#/components/schemas/NewOrder'
         '400':
           description: Bad Request. Invalid request or validation error.
           content:
@@ -128,7 +128,7 @@ paths:
             type: string
             format: string
       requestBody:
-        $ref: '#/components/requestBodies/Order'
+        $ref: '#/components/requestBodies/NewOrder'
       responses:
         '200':
           description: OK. Successful response with updated Order
@@ -282,6 +282,21 @@ components:
           type: number
         orderId:
           type: string
+    NewOrder:
+      title: Pizza Order
+      required:
+        - orderId
+      properties:
+        customerName:
+          type: string
+        address:
+          type: string
+        pizzaType:
+          type: string
+        creditCardNumber:
+          type: string
+        quantity:
+          type: number
     Error:
       title: Error object returned with 4XX HTTP status
       required:
@@ -308,12 +323,12 @@ components:
           type: string
           description: Preferably an url with more details about the error.
   requestBodies:
-    Order:
+    NewOrder:
       description: Order object that needs to be added
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Order'
+            $ref: '#/components/schemas/NewOrder'
       required: true
   securitySchemes:
     default:
